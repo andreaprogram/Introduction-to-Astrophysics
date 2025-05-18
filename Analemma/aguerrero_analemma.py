@@ -8,7 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# SIMULATION OF AN ANALEMMA
+# SIMULATION OF AN ANALEMMA at 12:00h (clock time)
 # DATA INPUTS------------------------------------------------
 
 # Parameters of Earth's orbit
@@ -25,10 +25,10 @@ landa = np.radians(2.089509)
 def Mean_anomaly(N): # Mean anomaly for day N
     return 2*np.pi*(N-3)/T
 
-def Hour_Angle(Ma, ecc, tilt): #Hour angle of the Sun (using Equation Of Time)
-    return ( -2*ecc*np.sin(Ma)-(np.tan(tilt/2))**2 * np.sin(2*(Ma+P)) ) 
- #in radians
-
+def Hour_Angle(Ma, ecc, tilt): #Hour angle of the Sun (using (-1)*Equation Of Time)
+    return ( -2*ecc*np.sin(Ma)-(np.tan(tilt/2))**2 * np.sin(2*(Ma+P)) ) #in radians
+ #Note: we are implicitely doing: true solar time = clock time + EOT and HA = 15º(true solar time-12h)
+# with clock solar time = 12h
 def delta(N): #Sun's declination
     return -epsilon * np.cos((2*np.pi*(N+10))/T)
 
