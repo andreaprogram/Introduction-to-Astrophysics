@@ -8,10 +8,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Plot of the EOT
-e=0.0176
-epsilon=np.radians(23.45)
+e = 0.0176
+epsilon = np.radians(23.45)
 P = np.radians(12.3)
-T=365.25
+T = 365.25
 
 #Compute Mean anomaly for day N
 def M(N):
@@ -26,7 +26,7 @@ EOT_circ=[]
 EOT_tiltless=[]
 days=[]
 
-for i in range(1,366):
+for i in range(1,366): 
     days.append(i)
     EOT_l.append(EOT(M(i),e,epsilon))
     EOT_circ.append(EOT(M(i),0,epsilon))
