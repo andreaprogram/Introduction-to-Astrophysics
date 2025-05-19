@@ -14,10 +14,10 @@ import pandas as pd
 # Parameters of Earth's orbit
 e=0.0176
 epsilon=np.radians(23.45)
-P = np.radians(12.3)
+P = np.radians(12.9)
 T=365.25
 
-#Coordenades Bellaterra
+#Coordenates Bellaterra
 phi = np.radians(41.505789)
 landa = np.radians(2.089509)
 
@@ -66,8 +66,8 @@ file_path = "C:/Users/Lenovo/Documents/assignment_astro/ephemeris.xlsx"
 excel_data = pd.ExcelFile(file_path)
 df = pd.read_excel(file_path, sheet_name="Sol")
 
-az = df["az"].astype(float)
-alt = df["alt"].astype(float)
+az = df["az Earth"].astype(float)
+alt = df["alt Earth"].astype(float)
     
 
 # PLOT-----------------------------------------------------
